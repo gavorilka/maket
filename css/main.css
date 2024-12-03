@@ -21,6 +21,7 @@ background-color: var(--bg-2);
 .wrapper {
     padding: 0 12%;
 }
+
 .link {
     text-transform: uppercase;
     text-decoration: none;
@@ -34,6 +35,7 @@ background-color: var(--bg-2);
     transition: color 0.3s ease; /* Плавный переход для цвета текста */
     cursor: pointer; /* Указатель при наведении */
 }
+
 .link::after {
     content: ""; /* Создаем пустой элемент */
     position: absolute; /* Абсолютное позиционирование */
@@ -51,6 +53,7 @@ background-color: var(--bg-2);
 .link:hover::after {
     opacity: 1; /* Показать фон при наведении */
 }
+
 .main-menu{
     display: flex;
     column-gap: 20px;
@@ -62,13 +65,13 @@ background-color: var(--bg-2);
     color: #FFFFFF;
     z-index: 2;
 }
-.social-media {
-    display: flex;
-    column-gap: 10px;
-}
 
 
 /* Start header style*/
+header {
+    background-image: url('../img/lineVector.svg');
+    background-repeat: no-repeat;
+}
 .nav {
     display: flex;
     justify-content: space-between;
@@ -105,55 +108,43 @@ background-color: var(--bg-2);
     width: 1000px;
     height: 1000px;
     border-radius: 150px; 
-    bottom: 1000px;
+    top: -20%;
     left: 50%;
     transform: rotate(-45deg);
     overflow: hidden;
     z-index: 1;
-    position: relative; 
+    position: absolute; 
     background-color: transparent;
-    
-
 }
+
 .photo-content{
     width: 100%;
     height: 100%;
-    background-image: url("/img/photo.png");
+    background-image: url("../img/photo.png");
     background-size: cover; 
-    background-position:  center; 
-    position: absolute; 
-
+    background-position: center; 
     transform: scale(1.3) rotate(45deg);
-    position: absolute;
     filter: blur(2px);
-
-
 }
 /* заголовок */
 .bg-title {
     margin-top: 20%;
     padding: 0 12%;
     box-sizing: border-box;
-    width: 620px;
-    height: 205px;
     display: flex;
     flex-direction: column;
     justify-content: left;
-    align-items: left;
     padding: 20px;
     gap: 10px;
-
     width: 618px;
-    height: 204px;
 
     background: var(--bs-white);
     /* Drop Shadow/600 */
     box-shadow: 0px 16px 32px -8px rgba(12, 12, 13, 0.4);
     border-radius: 30px 30px 30px 0px;
 }
-h1 {
-    
 
+h1 {
     padding: 0%;
     font-family: var(--font-title);
     font-style: normal;
@@ -166,6 +157,7 @@ h1 {
     flex-grow: 0;
     margin-bottom: 0;
 }
+
 .primary-text {
     display: block; 
     margin-top: 0px;
@@ -178,14 +170,9 @@ h1 {
 }
 
 /* второй фрейм с описанием */
-.description-frame{
-
-    width: 1280px;
-    height: 700px;
-    background-image: url("/img/bg.png");
-    background-size: cover; 
-    padding: 0 0%;
-}git init
+.description{
+    background: linear-gradient(to right, #000000, #00b3b3);
+}
 
 @media(max-width: 767px) {
     .main-menu {

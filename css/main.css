@@ -28,32 +28,12 @@ overflow-x: hidden; /* Скрываем горизонтальную прокр�
     text-decoration: none;
     color: var(--bs-white);
     cursor: pointer;
-    position: relative; /* Устанавливаем позицию для псевдоэлементов */
+    position: relative;
     padding: 10px;
-    background-color: transparent; /* Исходный цвет фона (прозрачный) */
-    color: #ffffff; /* Цвет текста */
-    border-radius: 10px; /* Закругленные углы */
-    transition: color 0.3s ease; /* Плавный переход для цвета текста */
-    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
-.link::after {
-    content: ""; /* Создаем пустой элемент */
-    position: absolute; /* Абсолютное позиционирование */
-    top: 0; /* Сверху по границе элемента */
-    left: 0; /* Слева по границе элемента */
-    right: 0; /* Справа по границе элемента */
-    bottom: 0; /* Снизу по границе элемента */
-    background: rgba(255, 255, 255, 0.15); /* Полупрозрачный черный фон */
-    border-radius: 8px; /* Закругления углов */
-    opacity: 0; /* Изначально скрыт */
-    transition: opacity 0.3s ease; /* Плавный переход по прозрачности */
-    z-index: -1; /* За текстом */
-}
-
-.link:hover::after {
-    opacity: 1; /* Показать фон при наведении */
-}
 
 .main-menu{
     display: flex;
@@ -70,8 +50,52 @@ overflow-x: hidden; /* Скрываем горизонтальную прокр�
     display: flex;
     column-gap: 5px;
     top: -10%;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
-/* Start header style*/
+/* burger menu */
+.burger {
+    display: none;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    z-index: 50;
+    margin-top: 30px;
+}
+.burger span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #0D444A;
+    left: 5px;
+    transition: transform .4s, opacity .4s, background-color .4s;
+}
+.burger span:nth-child(1) {
+    transform: translateY(-10px);
+}
+.burger span:nth-child(3) {
+    transform: translateY(10px);
+}
+/* burger menu animation */
+
+.header.open .burger span:nth-child(1){
+    transform: translateY(0) rotate(45deg);
+}
+.header.open .burger span:nth-child(2){
+    opacity: 0;
+}
+.header.open .burger span:nth-child(3){
+    transform: translateY(0) rotate(-45deg);
+}
+.header.open .burger span{
+    background-color: var(--bs-white);
+}
+/* Start header style */
 
 .nav {
     display: flex;
@@ -120,7 +144,7 @@ overflow-x: hidden; /* Скрываем горизонтальную прокр�
     margin-top: 20%;
     padding: 0 12%;
     box-sizing: border-box;
-    width: 620px;
+    min-width: 620px;
     height: 205px;
     display: flex;
     flex-direction: column;
@@ -189,76 +213,42 @@ h1 {
 
 }
 .description{
-    width: auto;
-    height: 700px;
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(to right, #000000, #0FC7DD);
     z-index: -2;
     display: flex;
     align-items: center;    
 }
-
-#icons {
-    width: 66px;
-    height: 450px;
-    
-    margin-left: 12%;
-    justify-content: center;   
-    list-style-type: none;
-}
-.icon {
-    margin-bottom: 30px;
-}
 .description-list {
-    height: 450px;
-    width: 2000px;
-    
+    max-height: 550px;
+    max-width: 2000px;
     color: var(--bs-white);
     font-family: var(--font-title);
-    margin-left: 12%;
-    list-style-type: none;
+    margin-top: 2%;
 }
-.no-marker {
-    list-style-type: none;
-    margin-left: 5%;
-}
-icon-text::before {
+.no-marker { list-style-type: none;}
+.element { display: flex;}
+.element::before {
     content: '';
-    width: 60px; 
-    height: 60px; 
-    position: absolute;
-    margin-left: -4%;
+    min-width: 64px; 
+    height: 64px; 
     background-repeat: no-repeat;
+    margin-right: 15px;
 }
-#teacher::before {
-    background-image: url("/img/teacherIcon.svg");
-}
-#book::before {
-    background-image: url("/img/bookIcon.svg");
-}
-#timer::before {
-    background-image: url("/img/timeIcon.svg");
-}
-#certificate::before {
-    background-image: url("/img/certificateIcon.svg");
-}
-#computer::before {
-    background-image: url("/img/computerIcon.svg");
-}
-
-.element {
-    margin-bottom: 70px;
-}
+#teacher::before { background-image: url("/img/teacherIcon.svg");}
+#book::before { background-image: url("/img/bookIcon.svg");}
+#timer::before { background-image: url("/img/timeIcon.svg");}
+#certificate::before { background-image: url("/img/certificateIcon.svg");}
+#computer::before { background-image: url("/img/computerIcon.svg");}
+.element { margin-bottom: 50px;}
 .h2 {
     font-weight: bold;
     line-height: 110%;
-
 }
 .primary-white-text {
     font-family: var(--font-text);
     font-size: 20px;
-    position: absolute; 
-    box-sizing: border-box; 
-    white-space: normal; 
 }
 /* третий фрейм направления */
 .line2 {
@@ -277,20 +267,19 @@ icon-text::before {
 .types {
     height: 900px;
     padding: 0 12%;
-
 }
 #title-text {
     margin-top: 25px;
 }
-.container {
+.container{
     display: flex; /* Используйте flex для горизонтального расположения type-box */
     justify-content: space-between;
     gap: 20px; /* Промежуток между блоками */
-    margin-top: 30px; /* Отступ сверху */
-    
+    margin-top: 150px; /* Отступ сверху */
+    height: 660px;
+    box-sizing: border-box;
 }
 .type-box {
-    margin-top: 150px;
     width: 400px;
     height: 600px;
     border-radius: 30px;
@@ -299,7 +288,6 @@ icon-text::before {
     display: flex;
     flex-direction: column; /* Расположить элементы внутри в столбик */
     align-items: center; /* Центрирование по горизонтали */
-    
 }
 .img {
     width: 340px;
@@ -349,8 +337,4 @@ icon-text::before {
     color: #31C4D6;             /* Цвет текста */
 }
 
-@media(max-width: 767px) {
-    .main-menu {
-       flex-direction: column;
-    }
-}
+

@@ -4,43 +4,118 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/media-queries.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
-        <title>Учебный центер</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+        <title>Учебный центр</title>
     </head>
-    <body class="wrapper">
-        
-        <header >
-            <nav class="nav">
-                <div class="logo">
-                    <img src="img/logo.svg" alt="логотип">
+    <body>
+        <header class="header">
+            <div class="wrapper"> 
+                <nav class="nav">
+                    <div class="logo">
+                        <img src="img/logo.svg" alt="логотип">
+                    </div>
+                    <ul class="main-menu">
+                        <li class="menu-item"><a href="" class="link">обучение</a></li>
+                        <li class="menu-item"><a href="" class="link">ПОВЫШЕНИЕ КВАЛИФИКАЦИИ</a></li>
+                        <li class="menu-item"><a href="" class="link">КОНТАКТЫ</a></li>
+                        <li class="menu-item"><a href="" ><img class="social-media" src="img/tgLogo.svg" alt="Телеграм"></a></li>
+                        <li class="menu-item"><a href="" ><img class="social-media" src="img/vkLogo.svg" alt="Вконтакте"></a></li>
+                    </ul>
+                    <button class="burger" id="brgr-menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </nav>
+                
+                <div class="first-frame" >
+                    <div class="bg-title">
+                        <h1>НАУЧИСЬ СОВРЕМЕННЫМ НАПРАВЛЕНИЯМ</h1>
+                        <span class="primary-text">Открой новые горизонты в своем профессиональном пути</span> 
+                    </div>        
+                    <div class="diamond-photo">
+                        <div class="photo-content"></div>
+                    </div>
                 </div>
-                <ul class="main-menu">
-                    <li class="menu-item"><a href="" class="link">обучение</a></li>
-                    <li class="menu-item"><a href="" class="link">ПОВЫШЕНИЕ КВАЛИФИКАЦИИ</a></li>
-                    <li class="menu-item"><a href="" class="link">КОНТАКТЫ</a></li>
-                    <li class="menu-item"><a href="" class="social-media"><img  src="/img/tgLogo.svg" alt="Телеграм"></a></li>
-                    <li class="menu-item"><a href="" class="social-media"><img class="social-media" src="/img/vkLogo.svg" alt="Вконтакте"></a></li>
-                </ul>
+            </div>   
+            
         </header>
         
-       <div class="first-frame" >
+        <main>
+            <div class="line-bg">
+                <div class="line"></div>
+            </div>
+            <section class="description">
+                <div class="description-list wrapper">
+                    <ul class="no-marker">
+                        <li class="element" id="teacher">
+                            <div class="icon-text" > 
+                                <h2>Квалифицированные преподаватели </h2>
+                                <span class="primary-white-text">Обучение проводит команда опытных специалистов с большим стажем работы в образовательной сфере</span>
+                            </div>
+                            </li>
+                        <li class="element" id="book">
+                            <div class="icon-text" >
+                                <h2>Современные методики</h2>
+                                <span class="primary-white-text">Использование актуальных педагогических методов и технологий, что позволяет повысить качество обучения</span>
+                            </div>
+                            </li>
+                        <li class="element" id="timer">
+                            <div class="icon-text" >
+                                <h2>Гибкие графики обучения</h2>
+                                <span class="primary-white-text">Возможность выбрать удобное время для занятий, включая вечерние и выходные курсы</span>    
+                            </div>
+                            </li>
+                        <li class="element" id="certificate"> 
+                            <div class="icon-text" >
+                                <h2>Сертификаты и дипломы</h2>
+                                <span class="primary-white-text">По окончании курсов выдается удостоверение о квалификации, что повышает конкурентоспособность на рынке труда</span>
+                            </div>
+                        </li>
+                        <li class="element" id="computer">
+                            <div class="icon-text" >
+                                <h2>Доступ к ресурсам</h2>
+                                <span class="primary-white-text">Участники получают доступ к обширной библиотеке материалов и онлайн-ресурсам, которые помогут в дальнейшем обучении</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="line-bg">
+                <div class="line2"></div>
+            </div>
+            <section class="types">
+                <h1 id="title-text">Направления</h1>
+                <div class="center">
+                    <div class="container">
+                        <div class="type-box">
+                            <div class="img-and-text">
+                                <div class="img"></div>
+                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. nisi ut aliquip ex ea commodo consequat.</div>
+                            </div>
+                            <div class="button">Записаться</div>       
+                        </div>
+                        <div class="type-box">
+                            <div class="img-and-text">
+                                <div class="img"></div>
+                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. nisi ut aliquip ex ea commodo consequat.</div>
+                            </div>
+                            <div class="button">Записаться</div>       
+                        </div>
+                        <div class="type-box">
+                            <div class="img-and-text">
+                                <div class="img"></div>
+                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. nisi ut aliquip ex ea commodo consequat.</div>
+                            </div>
+                            <div class="button">Записаться</div>       
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script src="js/scrollbar.js"></script>
+        </main>
         
-            <div class="bg-title">
-                <h1>НАУЧИСЬ СОВРЕМЕННЫМ НАПРАВЛЕНИЯМ</h1>
-                <span class="primary-text">Открой новые горизонты в своем профессиональном пути</span> 
-            </div>
-           
-                
-            <div class="diamond-photo">
-                <div class="photo-content"></div>
-            </div>
-            
-        </div>
-
-        <div class="description-frame"></div>
-       
     </body>
 </html>
